@@ -1,9 +1,11 @@
 import Icons from './icons';
 import tplPlayer from '../template/player.art';
+import my_lrc from '../template/my_lrc.art';
 
 class Template {
     constructor(options) {
         this.container = options.container;
+        this.lrc_container = options.lrc_container;
         this.options = options.options;
         this.randomOrder = options.randomOrder;
         this.init();
@@ -25,9 +27,15 @@ class Template {
             cover: cover,
             getObject: (obj) => obj,
         });
+        this.lrc_container.innerHTML = my_lrc({
+            options: this.options,
+            icons: Icons,
+            cover: cover,
+            getObject: (obj) => obj,
+        });
 
-        this.lrc = this.container.querySelector('.aplayer-lrc-contents');
-        this.lrcWrap = this.container.querySelector('.aplayer-lrc');
+        this.lrc = this.lrc_container.querySelector('.aplayer-lrc-contents');
+        this.lrcWrap = this.lrc_container.querySelector('.aplayer-lrc');
         this.ptime = this.container.querySelector('.aplayer-ptime');
         this.info = this.container.querySelector('.aplayer-info');
         this.time = this.container.querySelector('.aplayer-time');

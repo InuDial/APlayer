@@ -8,9 +8,6 @@
             <span class="aplayer-title">No audio</span>
             <span class="aplayer-author"></span>
         </div>
-        <div class="aplayer-lrc">
-            <div class="aplayer-lrc-contents" style="transform: translateY(0); -webkit-transform: translateY(0);"></div>
-        </div>
         <div class="aplayer-controller">
             <div class="aplayer-bar-wrap">
                 <div class="aplayer-bar">
@@ -30,11 +27,24 @@
                     {{@ icons.skip }}
                 </span>
                 <span class="aplayer-icon aplayer-icon-play">
-                    {{@ icons.play }}
+                    <!-- {{@ icons.play }} -->
                 </span>
                 <span class="aplayer-icon aplayer-icon-forward">
                     {{@ icons.skip }}
                 </span>
+                <!-- volume here -->
+                <button type="button" class="aplayer-icon aplayer-icon-order">
+                    <!-- {{ if options.order === 'list' }}{{@ icons.orderList }}{{ else if options.order === 'random' }}{{@ icons.orderRandom }}{{ /if }} -->
+                </button>
+                <button type="button" class="aplayer-icon aplayer-icon-loop">
+                    <!-- {{ if options.loop === 'one' }}{{@ icons.loopOne }}{{ else if options.loop === 'all' }}{{@ icons.loopAll }}{{ else if options.loop === 'none' }}{{@ icons.loopNone }}{{ /if }} -->
+                </button>
+                <button type="button" class="aplayer-icon aplayer-icon-menu">
+                    <!-- {{@ icons.menu }} -->
+                </button>
+                <button type="button" class="aplayer-icon aplayer-icon-lrc">
+                    <!-- {{@ icons.lrc }} -->
+                </button>
                 <div class="aplayer-volume-wrap">
                     <button type="button" class="aplayer-icon aplayer-icon-volume-down">
                         {{@ icons.volumeDown }}
@@ -45,18 +55,6 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="aplayer-icon aplayer-icon-order">
-                    {{ if options.order === 'list' }}{{@ icons.orderList }}{{ else if options.order === 'random' }}{{@ icons.orderRandom }}{{ /if }}
-                </button>
-                <button type="button" class="aplayer-icon aplayer-icon-loop">
-                    {{ if options.loop === 'one' }}{{@ icons.loopOne }}{{ else if options.loop === 'all' }}{{@ icons.loopAll }}{{ else if options.loop === 'none' }}{{@ icons.loopNone }}{{ /if }}
-                </button>
-                <button type="button" class="aplayer-icon aplayer-icon-menu">
-                    {{@ icons.menu }}
-                </button>
-                <button type="button" class="aplayer-icon aplayer-icon-lrc">
-                    {{@ icons.lrc }}
-                </button>
             </div>
         </div>
     </div>

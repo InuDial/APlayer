@@ -24,9 +24,13 @@ class APlayer {
     constructor(options) {
         this.options = handleOption(options);
         this.container = this.options.container;
+        this.lrc_container = this.options.lrc_container;
         this.paused = true;
         this.playedPromise = Promise.resolve();
         this.mode = 'normal';
+        this.thumbupfn = function () {};
+        this.togglefn = function() {};
+        this.loadedfn = function() {};
 
         this.randomOrder = utils.randomOrder(this.options.audio.length);
 
@@ -47,7 +51,7 @@ class APlayer {
 
         // save lrc
         if (this.options.lrcType === 2 || this.options.lrcType === true) {
-            const lrcEle = this.container.getElementsByClassName('aplayer-lrc-content');
+            const lrcEle = this.lrc_container.getElementsByClassName('aplayer-lrc-content');
             for (let i = 0; i < lrcEle.length; i++) {
                 if (this.options.audio[i]) {
                     this.options.audio[i].lrc = lrcEle[i].innerHTML;
@@ -57,6 +61,7 @@ class APlayer {
 
         this.template = new Template({
             container: this.container,
+            lrc_container: this.lrc_container,
             options: this.options,
             randomOrder: this.randomOrder,
         });

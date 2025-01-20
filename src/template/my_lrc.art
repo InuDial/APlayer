@@ -1,0 +1,5 @@
+<div class="aplayer">
+    <div class="aplayer-lrc">
+        <div class="aplayer-lrc-contents" style="transform: translateY(32px); -webkit-transform: translateY(32px);"></div>
+    </div>
+</div>

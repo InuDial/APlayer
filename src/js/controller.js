@@ -21,6 +21,7 @@ class Controller {
     initPlayButton() {
         this.player.template.pic.addEventListener('click', () => {
             this.player.toggle();
+            this.player.togglefn();
         });
     }
 
@@ -43,6 +44,7 @@ class Controller {
             this.player.bar.set('played', percentage, 'width');
             this.player.seek(percentage * this.player.duration);
             this.player.disableTimeupdate = false;
+            this.player.thumbupfn();
         };
 
         this.player.template.barWrap.addEventListener(utils.nameMap.dragStart, () => {
@@ -88,6 +90,7 @@ class Controller {
     }
 
     initOrderButton() {
+        return;
         this.player.template.order.addEventListener('click', () => {
             if (this.player.options.order === 'list') {
                 this.player.options.order = 'random';
@@ -100,6 +103,7 @@ class Controller {
     }
 
     initLoopButton() {
+        return;
         this.player.template.loop.addEventListener('click', () => {
             if (this.player.list.audios.length > 1) {
                 if (this.player.options.loop === 'one') {
@@ -125,18 +129,21 @@ class Controller {
     }
 
     initMenuButton() {
+        return;
         this.player.template.menu.addEventListener('click', () => {
             this.player.list.toggle();
         });
     }
 
     initMiniSwitcher() {
+        return;
         this.player.template.miniSwitcher.addEventListener('click', () => {
             this.player.setMode(this.player.mode === 'mini' ? 'normal' : 'mini');
         });
     }
 
     initSkipButton() {
+        return;
         this.player.template.skipBackButton.addEventListener('click', () => {
             this.player.skipBack();
         });
@@ -149,6 +156,7 @@ class Controller {
     }
 
     initLrcButton() {
+        return;
         this.player.template.lrcButton.addEventListener('click', () => {
             if (this.player.template.lrcButton.classList.contains('aplayer-icon-lrc-inactivity')) {
                 this.player.template.lrcButton.classList.remove('aplayer-icon-lrc-inactivity');
